@@ -3,14 +3,14 @@ const snackbar = document.querySelector('.snackbar')
 const navbar = document.querySelector('.navbar')
 const generateColors = document.querySelector('.generate-colors')
 
-const createRandomDivs = (amount) => {
+const createCards = (amount) => {
 	for (let i = 0; i < amount; i++) {
 		newDiv = document.createElement('div')
 		newDiv.classList.add('card')
 		cardsContainer.appendChild(newDiv)
 	}
 }
-createRandomDivs(30)
+createCards(30)
 
 const setCardBackground = () => {
 	const cards = document.querySelectorAll('.card')
@@ -23,7 +23,6 @@ const setCardBackground = () => {
 			let currentColor = e.target.querySelector('span').getAttribute('data-color')
 			navigator.clipboard.writeText(`#${currentColor}`)
 			snackbar.classList.add('active')
-			document.execCommand('copy')
 			setTimeout(() => {
 				snackbar.classList.remove('active')
 			}, 1500)
