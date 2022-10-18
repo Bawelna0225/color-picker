@@ -15,7 +15,7 @@ createCards(30)
 const setCardBackground = () => {
 	const cards = document.querySelectorAll('.card')
 	cards.forEach((card) => {
-		randomColor = Math.floor(Math.random() * 16777215).toString(16)
+		randomColor = Math.floor(Math.random() * 0xffffff).toString(16)
 		card.style.backgroundColor = `#${randomColor}`
 		card.innerHTML = `<span data-color='${randomColor}'>#${randomColor}</span>`
 
